@@ -53,8 +53,9 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-  def self.find_by
-
+  def self.find_by(attribute_hash)
+    v = attribute_hash.values.first
+    f_v = value.class == Fixnum ? v : "'#{v}'"
   end
 
 
